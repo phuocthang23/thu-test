@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Đăng ký Môn học </title>
+    <!-- <link rel="stylesheet" href="../../asset/css/style.css"> -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<style>
+    .banner{
+        height: 50px;
+        width: full;
+        background-color: red;
+    }
+    .banner h4 {
+        margin: 0;
+        padding: 0;
+    }
+    .dashboard {
+        height: 130vh;
+    }
+    .fixed {
+        position: fixed;
+        width: 100%;
+    }
+    .right-content h3 {
+        margin-bottom: 30px;
+        display: block;
+        font-weight: bold;
+    }
+    img {
+        width: 60px;
+        float: left;
+        margin-right: 20px;
+    }
+    span.ten {
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    span.giatien {display: block;}
+    .menu {
+        width: 500px;
+        float: left;
+        margin-right: 40px;
+    }
+    .menu ul li {
+        margin-bottom: 25px;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 20px;
+    }
+    .btn-adding {
+        font-size: 20px;
+        cursor: pointer;
+        font-weight: 700;
+        line-height: 20px;
+        width: 22px;
+        height: 22px;
+        background-color: #ee4d2d;
+        float: right;
+        box-sizing: border-box;
+        padding-left: 6px;
+        color: #fff;
+    }
+    .menu ul li:after {
+        clear: both;
+        content: "";
+        display: block;
+        width: 100%;
+    }
+    .thanhtoan {
+        width: 300px;
+        float: left;
+        position: relative;
+    }
+    .thanhtoan h3{
+        position: relative;
+        bottom: 20px;
+    }
+    ul#thanhtoan li:after {
+        clear: both;
+        display: block;
+        content: "";
+        height: 8px;
+    }
+
+    /* style nút xóa  */
+    span.btn-thanhtoan-reset {
+        background: #f33404;
+        color: white;
+        padding: 15px;
+        margin-top: 30px;
+        display: block;
+        text-align: center;
+        text-transform: uppercase;
+        cursor: pointer;
+        
+    }
+    span.btn-thanhtoan-reset:hover {
+        background: #ad5039;
+    }
+
+    /* style nút đăng ký  */
+
+    span.btn-dang-ky {
+        background: #4beb61;
+        padding: 15px;
+        margin-top: 80px;
+        display: block;
+        text-align: center;
+        text-transform: uppercase;
+        cursor: pointer;
+
+    }
+    span.btn-dang-ky:hover {
+        background: #15f532;
+    }
+
+    /* style nút random */
+    span.btn-tu-dong {
+        background: #4beb61;
+        padding: 15px;
+        margin-top: 30px;
+        display: block;
+        text-align: center;
+        text-transform: uppercase;
+        cursor: pointer;
+
+    }
+    span.btn-tu-dong:hover {
+        background: #15f532;
+    }
+
+    span#soluong {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-weight: bold;
+    }
+
+    .hientongtien {
+        position: relative;
+        width: 300px;
+        float: left;
+    }
+
+    .hientongtien h3 {
+        position: relative;
+        bottom: 20px;
+    }
+
+    span#tongsotien {
+        position: absolute;
+        right: 0;
+        font-weight: bold;
+    }
+    .btn-xoa {
+        background: #ccc;
+        display: block;
+        width: 16px;
+        box-sizing: border-box;
+        padding-left: 5px;
+        float: right;
+        cursor: pointer;
+    }
+    .btn-xoa:hover {
+        background: #af981d;
+        
+    }
+
+    #ketqua{
+        display: none;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        min-height: 30px;
+        max-width: 75%;
+        background-color: #ffffcc;
+        margin-bottom: 30px;
+        border-left: 6px solid #ccc;
+        border-color: #ffeb3b;
+        text-transform: uppercase;
+        font-weight: bold;
+        line-height: 25px;
+    }
+    footer{
+        height: 30px;
+        width: fit-content;
+        background-color: rgba(224, 29, 29, 0.61);
+    }
+</style>
+<body>
+    <div id="banner" class="banner">
+        <h4>HỆ THỐNG QUẢN LÝ MÔN HỌC</h4>
+    </div>
+    <div class="dashboard">
+        <div class="left-content">
+            <!-- <ul class="ul-menu">
+                <li class="menu-item"><a href="#">B1: Máy tính</a></li>
+                <li class="menu-item active"><a href="#">B2: Scroll Y</a></li>
+                <li class="menu-item"><a href="#">Bài tập 3</a></li>
+                <li class="menu-item"><a href="#">Bài tập 4</a></li>
+                <li class="menu-item"><a href="#">Bài tập 5</a></li>
+                <li class="menu-item"><a href="../../../index.html">Quay lại trang chủ</a></li>
+            </ul> -->
+        </div>
+        <div class="right-content">
+            <h3> DANH SÁCH ĐĂNG KÝ MÔN </h3>
+            <div id="ketqua"></div>
+            <div class="menu">
+                <ul id ="thucdon"></ul>
+            </div>
+            <div class="thanhtoan">
+                <h3>Thanh toán</h3>
+                <span id="soluong"></span>
+                <ul id="thanhtoan">
+                    <!-- <li>
+                        <img src="https://images.foody.vn/res/g106/1056955/s120x120/7f637b55-4aef-4a5b-8416-005a904f-479410e6-210316114825.jpeg">
+                        <span class="ten">2 chai GIẢI NHIỆT</span>
+                        <span class="giatien">24.0000</span>
+                    </li> -->
+                </ul>
+                <!-- <div class="hientongchi">
+                    <h3 class="tongchi"> Tổng chỉ: </h3>
+                    
+                </div> -->
+                <div class="hientongtien">
+                    <h3 class="hientongtien">Tổng Tiền </h3>
+                    <span id="tongsotien"> 0 VND</span>
+                </div>
+                <!-- nút bấm  -->
+                <span id="btn-dk" class="btn-dang-ky"> đăng ký môn </span>
+                <span id="btn-reset" class="btn-thanhtoan-reset">xóa tất cả </span>
+                <span id="btn-td" class="btn-tu-dong"> tự động đăng ký môn </span>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <footer>
+
+    </footer>
+</body>
+<script src="index.js"></script>
+</html>
